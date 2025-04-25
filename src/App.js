@@ -1,10 +1,14 @@
 import "./App.css";
+import { BrowserRouter } from "react-router-dom";
+import Header from "./component/navigation/header";
+import RoutePage from "./config/routes/routes";
 
 function App() {
   return (
-    <div className="App">
-      <div>This is grammer test</div>
-    </div>
+    <BrowserRouter>
+      <Header />
+      <RoutePage />
+    </BrowserRouter>
   );
 }
 
