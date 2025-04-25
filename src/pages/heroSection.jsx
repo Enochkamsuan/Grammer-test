@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
-    <div className="px-4 md:px-24 lg:px-28 py-10">
+    <div className="px-4 md:px-24 lg:px-28 py-10 h-screen">
       <div className="text-center font-bold font-fairDisplay text-3xl">
         Test Your Grammar
       </div>
