@@ -3,9 +3,13 @@ import { Link, useParams } from "react-router-dom";
 import data from "../Assets/data/data";
 
 const HeroSection = () => {
-  const { difficulties } = useParams();
+  const { difficulty } = useParams();
 
-  console.log("data", data);
+  const levels = data?.levels || [];
+
+  const uniqueDifficulties = [
+    ...new Set(levels.map((level) => level.difficulty)),
+  ];
 
   return (
     <div className="px-4 md:px-24 lg:px-28 py-10 h-screen">
@@ -16,26 +20,21 @@ const HeroSection = () => {
         Choose difficulty level
       </div>
       <div className="flex flex-col justify-center items-center py-9">
-        <Link
-          to={`/difficulty/:${difficulties}`}
-          className="w-full md:w-10/12 lg:w-1/2 "
-        >
-          <div className="bg-black text-white text-lg mt-3 p-3">difficulty</div>
-        </Link>
-        <Link
-          to="/difficulty/:difficulty"
-          className="w-full md:w-10/12 lg:w-1/2"
-        >
-          <div className="bg-black text-white text-lg mt-3 p-3">
-            INTERMIDIATE
-          </div>
-        </Link>
-        <Link
-          to="/difficulty/:difficulty"
-          className="w-full md:w-10/12 lg:w-1/2"
-        >
-          <div className="bg-black text-white text-lg mt-3 p-3">LEGEND</div>
-        </Link>
+        {uniqueDifficulties.map((difficulty, index) => (
+          <Link
+            key={index}
+            to={`/difficulty/${difficulty}`}
+            className="w-full md:w-10/12 lg:w-1/2"
+          >
+            <div
+              className={`rounded-md text-center text-white text-lg mt-3 p-3 ${
+                difficulty ? "bg-blue-900" : "bg-blue-700"
+              }`}
+            >
+              {difficulty.toUpperCase()}
+            </div>
+          </Link>
+        ))}
       </div>
     </div>
   );
