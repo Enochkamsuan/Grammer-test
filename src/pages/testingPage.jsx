@@ -101,6 +101,7 @@ const TestingPage = () => {
                     Next Question
                   </button>
                 )}
+
               {currentQuestionIndex === question.length - 1 && (
                 <div>
                   <div className="mt-4 font-semibold">
@@ -109,6 +110,38 @@ const TestingPage = () => {
                   <div className="font-bold bg-cyan-600 rounded-lg text-white my-4 p-2 w-1/3">
                     Your Results is {calculateScore()}%
                   </div>
+
+                  <button
+                    onClick={() => {
+                      const unlocked =
+                        JSON.parse(localStorage.getItem("unlockedLevels")) ||
+                        {};
+
+                      if (!unlocked[difficulty]) {
+                        unlocked[difficulty] = ["1"];
+                      }
+
+                      const nextLevel = (
+                        parseInt(unlocked[difficulty].slice(-1)[0]) + 1
+                      ).toString();
+
+                      if (!unlocked[difficulty].includes(nextLevel)) {
+                        unlocked[difficulty].push(nextLevel);
+                      }
+
+                      localStorage.setItem(
+                        "unlockedLevels",
+                        JSON.stringify(unlocked)
+                      );
+
+                      alert(
+                        `Level ${nextLevel} unlocked! Go back to Levels page!`
+                      );
+                    }}
+                    className="mt-4 px-6 py-2 bg-green-600 text-white rounded-md hover:bg-green-700"
+                  >
+                    Unlock Next Level
+                  </button>
                 </div>
               )}
             </div>
