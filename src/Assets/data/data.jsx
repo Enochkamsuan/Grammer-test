@@ -186,7 +186,7 @@ const data = {
       ],
     },
     {
-      level: "6",
+      level: "1",
       difficulty: "intermediate",
       questions: [
         {
@@ -227,7 +227,7 @@ const data = {
       ],
     },
     {
-      level: "7",
+      level: "2",
       difficulty: "intermediate",
       questions: [
         {
@@ -269,7 +269,7 @@ const data = {
       ],
     },
     {
-      level: "8",
+      level: "3",
       difficulty: "intermediate",
       questions: [
         {
@@ -310,7 +310,7 @@ const data = {
       ],
     },
     {
-      level: "9",
+      level: "4",
       difficulty: "intermediate",
       questions: [
         {
@@ -352,7 +352,7 @@ const data = {
       ],
     },
     {
-      level: "10",
+      level: "5",
       difficulty: "intermediate",
       questions: [
         {
