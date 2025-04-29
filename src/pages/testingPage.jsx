@@ -51,7 +51,7 @@ const TestingPage = () => {
   };
 
   return (
-    <div className="px-4 md:px-24 lg:px-28 py-10">
+    <div className="px-4 md:px-24 lg:px-28 py-[5.5rem]">
       {question.length > 0 ? (
         <>
           <div className="font-bold text-sm">

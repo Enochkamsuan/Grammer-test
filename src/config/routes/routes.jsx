@@ -9,7 +9,10 @@ const RoutePage = () => {
     <Routes>
       <Route path="/" element={<HeroSection />}></Route>
       <Route path="/difficulty/:difficulty" element={<Levels />}></Route>
-      <Route path="/questionaire/:difficulty" element={<TestingPage />}></Route>
+      <Route
+        path="/difficulty/:difficulty/questionnaire"
+        element={<TestingPage />}
+      ></Route>
     </Routes>
   );
 };

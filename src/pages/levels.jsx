@@ -28,7 +28,7 @@ const Levels = () => {
     }
   }, [difficulty]);
   return (
-    <div className="px-4 md:px-24 lg:px-28 py-10">
+    <div className="px-4 md:px-24 lg:px-28 py-[9.67rem]">
       <div className="text-center text-xl font-thin my-4">AVAILABLE LEVELS</div>
       <div className="flex justify-center">
         <div className="bg-gray-400 w-full md:w-1/2 rounded-md p-2">
@@ -40,7 +40,7 @@ const Levels = () => {
 
               return isUnlocked ? (
                 <Link
-                  to={`/questionaire/${difficulty}`}
+                  to={`/difficulty/${difficulty}/questionnaire `}
                   key={level}
                   className="bg-white font-semibold my-2 p-4 rounded text-center"
                 >

@@ -1,9 +1,9 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import data from "../Assets/data/data";
 
 const HeroSection = () => {
-  const { difficulty } = useParams();
+  // const { difficulty } = useParams();
 
   const levels = data?.levels || [];
 
@@ -12,7 +12,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <div className="px-4 md:px-24 lg:px-28 py-10 h-screen">
+    <div className="px-4 md:px-24 lg:px-28 py-24">
       <div className="text-center font-bold font-fairDisplay text-3xl">
         Test Your Grammar
       </div>
